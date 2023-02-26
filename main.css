@@ -1,0 +1,197 @@
+h1 {
+    padding: 10px 0px;
+    color: #fb4562;
+    font-size: 60px;
+    align-items: center;
+    text-shadow: 1px 1px black;
+}
+
+h2 {
+    font-size: 20px;
+    margin-top: 0px;
+}
+
+p {
+    font-size: 40px;
+
+}
+
+.answerbuttonsdiv {
+    align-items: center;
+    position: relative;
+    text-align: center;
+    display: grid;
+    height: 30vh;
+    grid-template-columns: auto auto;
+}
+
+.bottombuttonsdiv {
+    display: grid;
+    grid-template-columns: auto auto;
+    width: 60vh;
+    margin: 20px auto;
+}
+
+.answerbtn {
+    padding: 10px;
+    margin: 20px auto;
+    font-size: 25px;
+    box-shadow: 2px 2px;
+    color: #000000;
+    background-color: #fb4562;
+    margin-bottom: 20px;
+    width: 50vh;
+    height: 15vh;
+    border: 2px solid black;
+    border-radius: 25px;
+}
+.correctbutton {
+    padding: 10px;
+    margin: 20px auto;
+    font-size: 25px;
+    box-shadow: 2px 2px;
+    color: #000000;
+    background-color: #00e231;
+    margin-bottom: 20px;
+    width: 50vh;
+    height: 15vh;
+    border-radius: 25px;
+    border: 2px solid black;
+
+}
+.answerbtn:hover {
+    color: #fb4562;
+    background-color: #000000;
+}
+
+.answerbtn:active {
+    background-color: rgb(43, 122, 226);
+}
+
+.nextbutton {
+    padding: 10px;
+    margin: 20vh auto;
+    width: 20vh;
+    font-size: 20px;
+    border-radius: 25px;
+    background-color: #db0606;
+}
+
+.nextbutton:hover {
+    background-color: white;
+    color: #000000;
+}
+
+.submitbutton {
+    padding: 10px;
+    margin: 20vh auto;
+    width: 20vh;
+    font-size: 20px;
+    background-color: #00e231;
+    
+    border-radius: 25px;
+}
+
+.submitbutton:hover {
+    background-color: #000000;
+    color: #00e231;
+}
+
+body {
+    background-color: #06dafd;
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
+}
+
+footer {
+    margin-top: 0vh;
+    background-color: #fb4562;
+    padding: 5vh;
+}
+
+.alertBox {
+    position:relative;
+    width:60vh;
+    height:40vh;
+    z-index: 1000;
+    display: none;
+    margin:10px auto;
+    border:1px solid rgb(0, 0, 0);
+    background-color:#fb4562;
+    padding: 45px;
+    box-shadow: 10px 10px;
+    border-radius: 25px;
+}
+
+.alertBox h1 {
+    color: black;
+    font-size: 40px;
+}
+
+.alertBox p {
+    font-size: 25px;
+}
+
+
+@media only screen and (max-width: 1100px) {
+    .bottombuttonsdiv {
+        height: 40vh;
+        margin-top: 40vh;
+        
+    }
+
+    .submitbutton, .nextbutton {
+        
+        padding: 2vh;
+    }
+
+    .answerbuttonsdiv {
+        grid-template-columns: auto;
+        
+    }
+
+    .alertBox {
+        padding: 20px;
+        width: 40vh;
+    }
+
+
+
+  }
+
+  @media only screen and (max-width: 600px) {
+    .answerbuttonsdiv {
+        margin-left: auto;
+    }
+
+    .answerbtn {
+        width: 40vh;
+        font-size: 20px;
+        padding: 5px;
+    }
+
+    .submitbutton, .nextbutton {
+        
+        padding: 10px;
+        font-size: 20px;
+        width: 14vh;
+    }
+
+    .alertBox {
+        height: 50vh;
+    }
+
+    .submitbutton {
+        margin-left: 5vh;
+    }
+
+    .bottombuttonsdiv {
+        width: auto;
+    }
+
+    p {
+        font-size: 19px;
+        padding: 5px;
+    }
+  }

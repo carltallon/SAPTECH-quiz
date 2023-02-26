@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/staticFiles/main.css" />
+    <title>SAPtech</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+</head>
+  <body>
+      <h1>SAPtech Quiz</h1>
+      <p>{{ question }} {{answercount}} answers</p>
+
+    <div class = "answerbuttonsdiv">
+      <button id = "btn1" class="answerbtn">{{alternatives[0]}} </button>
+      <button id = "btn2" class="answerbtn">{{alternatives[1]}} </button>
+      <button id = "btn3" class="answerbtn">{{alternatives[2]}} </button>
+      <button id = "btn4" class="answerbtn">{{alternatives[3]}} </button>
+
+      <script>
+        const answer1 = document.getElementById('btn1');
+        let correctanswercount = 0;
+        let incorrectanswercount = 0;
+
+
+        var alternatives1 = '{{alternatives[0]}}';
+        var alternatives2 = '{{alternatives[1]}}';
+        var alternatives3 = '{{alternatives[2]}}';
+        var alternatives4 = '{{alternatives[3]}}';
+
+        answer1.addEventListener('click', function onClick() {
+          answer1.style.backgroundColor = '#9e9e9e';
+          answer1.style.color = '#000000';
+
+          //LOGIC
+          if (alternatives1 == correctanswer) {
+            correctanswercount = correctanswercount + 1;
+          } 
+          else if (alternatives1 == correctanswer2) {
+            correctanswercount = correctanswercount + 1;
+          }
+          else {
+            incorrectanswercount = incorrectanswercount + 1;
+          }
+        })
+
+        const answer2 = document.getElementById('btn2');
+
+        answer2.addEventListener('click', function onClick() {
+          answer2.style.backgroundColor = '#9e9e9e';
+          answer2.style.color = '#000000';
+
+          //LOGIC
+          if (alternatives2 == correctanswer) {
+            correctanswercount = correctanswercount + 1;
+          } 
+          else if (alternatives2 == correctanswer2) {
+            correctanswercount = correctanswercount + 1;
+          }
+          else {
+            incorrectanswercount = incorrectanswercount + 1;
+          }
+        });
+
+        const answer3 = document.getElementById('btn3');
+
+        answer3.addEventListener('click', function onClick() {
+          answer3.style.backgroundColor = '#9e9e9e';
+          answer3.style.color = '#000000';
+
+          //LOGIC
+          if (alternatives3 == correctanswer) {
+            correctanswercount = correctanswercount + 1;
+          }  
+          else if (alternatives3 == correctanswer2) {
+            correctanswercount = correctanswercount + 1;
+          }
+          else {
+            incorrectanswercount = incorrectanswercount + 1;
+          }
+        });
+
+        const answer4 = document.getElementById('btn4');
+
+        answer4.addEventListener('click', function onClick() {
+          answer4.style.backgroundColor = '#9e9e9e';
+          answer4.style.color = '#000000';
+
+          //LOGIC
+          if (alternatives4 == correctanswer) {
+            correctanswercount = correctanswercount + 1;
+          } 
+          else if (alternatives4 == correctanswer2) {
+            correctanswercount = correctanswercount + 1;
+          }
+          else {
+            incorrectanswercount = incorrectanswercount + 1;
+          }
+        });
+
+      </script>
+    </div>
+
+    <div id="alertbox" class="alertBox">
+        <h1>Correct!</h1>
+       <p>The answers were {{ correct_answer }} and {{ correct_answer2 }}</p>
+       <button style="margin: 0vh auto; background-color: #06dafd;" class="nextbutton" onclick="window.location.reload();">Next Question</button>
+    </div>
+
+    <div id="oneansweralertbox" class="alertBox">
+      <h1>Correct! </h1>
+     <p>The answer was {{ correct_answer }}</p>
+     <button style="margin: 0vh auto; background-color: #06dafd;" class="nextbutton" onclick="window.location.reload();">Next Question</button>
+  </div>
+
+    <div id="incorrectalertbox" class="alertBox">
+      <h1>Incorrect!</h1>
+      <p>The answers were {{ correct_answer }} and {{ correct_answer2 }}</p>
+      <button style="margin: 0vh auto; background-color: #06dafd;" class="nextbutton" onclick="window.location.reload();">Next Question</button>
+   </div>
+
+   <div id="oneanswerincorrectalertbox" class="alertBox">
+      <h1>Incorrect!</h1>
+      <p>The answer was {{ correct_answer }}</p>
+      <button style="margin: 0vh auto; background-color: #06dafd;" class="nextbutton" onclick="window.location.reload();">Next Question</button>
+    </div>
+
+    <div class = "bottombuttonsdiv">
+      <button class="nextbutton" onclick="window.location.reload();">Next Question</button>
+      <button id = "submitbtn" class="submitbutton">Submit</button>
+    </div>
+
+
+    <script>
+      const submitbtn = document.getElementById('submitbtn');
+      const correctalertbox = document.getElementById('alertbox');
+      const oneanswercorrectalertbox = document.getElementById('oneansweralertbox');
+      const oneanswerincorrectalertbox = document.getElementById('oneanswerincorrectalertbox');
+      const incorrectalertbox = document.getElementById('incorrectalertbox');
+      
+      var answercount = '{{ answercount }}';
+      var correctanswer = '{{ correct_answer }}';
+      var correctanswer2 = '{{ correct_answer2 }}';
+
+      submitbtn.addEventListener('click', function onClick() {
+
+        //code to display which alert box
+        if (correctanswercount == 1 && answercount == 1) {
+        oneansweralertbox.style.display = 'block';
+        } else if ( correctanswercount == 2 && answercount == 2){
+          correctalertbox.style.display = 'block';
+        } else if (correctanswercount == 0 && answercount == 2) {
+          incorrectalertbox.style.display = 'block';
+        } else if (correctanswercount == 1 && answercount == 1) {
+          oneanswerincorrectalertbox.style.display = 'block';
+        } else if (correctanswercount == 1 && answercount == 2) {
+          incorrectalertbox.style.display = 'block';  
+        }
+
+        //LOGIC
+
+        if (alternatives1 == correctanswer) {
+            answer1.style.backgroundColor = '#00e231';
+          } 
+          else if (alternatives1 == correctanswer2) {
+            answer1.style.backgroundColor = '#00e231';
+          }
+          else {
+            answer1.style.backgroundColor = '#db0606';
+          }
+
+
+        if (alternatives2 == correctanswer) {
+            answer2.style.backgroundColor = '#00e231';
+          } 
+          else if (alternatives2 == correctanswer2) {
+            answer2.style.backgroundColor = '#00e231';
+          }
+          else {
+            answer2.style.backgroundColor = '#db0606';
+          }
+
+        if (alternatives3 == correctanswer) {
+            answer3.style.backgroundColor = '#00e231';
+          } 
+          else if (alternatives3 == correctanswer2) {
+            answer3.style.backgroundColor = '#00e231';
+          }
+          else {
+            answer3.style.backgroundColor = '#db0606';
+          }
+
+
+        if (alternatives4 == correctanswer) {
+            answer4.style.backgroundColor = '#00e231';
+          } 
+          else if (alternatives4 == correctanswer2) {
+            answer4.style.backgroundColor = '#00e231';
+          }
+          else {
+            answer4.style.backgroundColor = '#db0606';
+          }
+        //window.location.reload();
+      });
+
+    </script>
+
+    <footer><h3>Created by Carl Tallon, SAP Coe Intern 2023</h3></footer>
+  </body>
+</html>
